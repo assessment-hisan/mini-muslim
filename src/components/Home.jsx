@@ -31,10 +31,10 @@ const Home = () => {
             </div>
 
             {/* Header Section */}
-            <div className="relative z-30 py-4 pt-12 w-[95%] mx-auto px-2 flex justify-between">
+            <div className="relative z-30 py-5 pt-12 w-[95%] mx-auto px-2 flex justify-between items-center">
                 <div>
-                <h1 className='font-lucky text-4xl font-semibold text-black uppercase '>Mini Muslim</h1>
-                <p className=" font-mont text-lg text-gray-800 leading-3 pl-1 font-semibold ">Welcome to Mini Muslim</p>
+                <h1 className='font-lucky text-[3rem]  text-black uppercase leading-8'>Mini Muslim</h1>
+                <p className=" font-mont text-lg text-gray-800 leading-5 pl-1 font-semibold ">Welcome to Mini Muslim</p>
                 </div>
                 <div className='h-14 w-14 bg-blue-700 rounded-lg'> 
 

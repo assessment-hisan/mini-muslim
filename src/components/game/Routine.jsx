@@ -238,7 +238,7 @@ const Routine = () => {
           <Question questionImage={currentQuestion.question} />
 
           {/* Answer Options */}
-          <div className="flex-center flex-wrap gap-2 py-5">
+          <div className="flex-center flex-wrap  py-5">
             {currentQuestion.answer.map(({ src, isCorrect }, index) => (
               <AnswerOption
                 key={index}
