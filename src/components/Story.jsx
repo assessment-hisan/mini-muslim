@@ -4,34 +4,40 @@ const stories = [
   {
     id: 1,
     image: '/story/figve.jpg',
-    bg: "/fgbg.png",
+    bg: "/story/bg/fg.png",
+    head : "/story/head/fo.png",
     heading: 'Forgiveness',
     content: 'Artificial intelligence (AI) has rapidly evolved from a concept in science fiction to a transformative force reshaping industries across the globe. <br/> As AI technologies continue to advance, their influence on the modern workplace is becoming increasingly profound. This essay will delve into the multifaceted impact of AI on various aspects of work, including automation, job displacement, skill enhancement, and ethical considerations.  One of the most significant impacts of AI is the automation of routine and repetitive tasks. AI-powered systems can efficiently process large volumes of data, generate reports, and perform other mundane activities that were previously done by humans. This automation frees up human workers to focus on more complex and creative tasks that require critical thinking, problem-solving, and strategic decision-making  Artificial intelligence (AI) has rapidly evolved from a concept in science fiction to a transformative force reshaping industries across the globe. <br/> As AI technologies continue to advance, their influence on the modern workplace is becoming increasingly profound. This essay will delve into the multifaceted impact of AI on various aspects of work, including automation, job displacement, skill enhancement, and ethical considerations.  One of the most significant impacts of AI is the automation of routine and repetitive tasks. AI-powered systems can efficiently process large volumes of data, generate reports, and perform other mundane activities that were previously done by humans. This automation frees up human workers to focus on more complex and creative tasks that require critical thinking, problem-solving, and strategic decision-making'
   },
   {
     id: 2,
     image: '/story/honest.jpg',
-    bg: "/fgbg.png",
+    bg: "/story/bg/pun.jpg",
+    head : "/story/head/ho.png",
     heading: 'Honesty',
     content: 'An inspiring journey of courage and resilience. Dive into the narrative of overcoming odds.',
   },
   {
     id: 3,
     image: '/story/pun.jpg',
+    bg: "/story/bg/pun.jpg",
+    head : "/story/head/pun.png",
     heading: 'Punctuality',
     content: 'A whimsical story of magic and wonder. Let yourself be enchanted by this captivating tale.',
   },
   {
     id: 4,
     image: '/story/smile.jpg',
-    bg: "/fgbg.png",
+    bg: "/story/bg/sm.jpg",
+    head : "/story/head/sm.png",
     heading: 'Smile',
     content: 'Explore the depths of friendship and loyalty through this touching narrative.',
   },
   {
     id: 5,
     image: '/story/respect.jpg',
-    bg: "/fgbg.png",
+    head : "/story/head/re.png",
+    bg: "/story/bg/re.jpg",
     heading: 'Respect',
     content: 'Explore the depths of friendship and loyalty through this touching narrative.',
   },
@@ -50,7 +56,15 @@ const Story = () => {
   };
  console.log(selectedStory)
   return (
-    <div className='view bg-slate-300 h-full py-5 overflow-auto'>
+    <div className='view  h-full py-5 overflow-auto '>
+      {/* Background Image */}
+      <div className="fixed inset-0 -z-10">
+        <img
+          src="/sky.jpg"
+          alt="Background"
+          className="w-full h-[100vh] object-cover opacity-50"
+        />
+      </div>
       <h1 className="text-center py-2 text-3xl font-semibold mb-10">Story Mode</h1>
 
       <div className="grid grid-cols-1 gap-6 px-10 overflow-y-auto">
@@ -90,7 +104,7 @@ const Story = () => {
         className="h-full bg-cover bg-no-repeat"
         style={{ backgroundImage: `url(${selectedStory.bg})` }}
       >
-        <img src="/forgiveness.png" alt="" className='h-32 sm:h-44 mx-auto pt-10 '/>
+        <img src={selectedStory.head} alt="" className='h-32 sm:h-44 mx-auto pt-10 '/>
         {/* Story Content */}
         <div className="absolute inset-x-0 bottom-[20%]  p-6 text-lg text-gray-700 h-[55%] overflow-y-auto bg-gray-800/10 m-5 rounded-2xl"> {/* Adjusted height for scrollable content */}
           <p className='font-medium text-base sm:text-xl text-black text-justify'>{selectedStory.content}</p>
