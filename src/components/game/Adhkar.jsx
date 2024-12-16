@@ -6,7 +6,7 @@ const questions = [
   {
     id: 1,
     foreground: "/morning.png",
-    question: "What do you say when you wake up ",
+    question: "What do you say when you wake up? ",
     answer: [
       { src: "/adhkar/a1.png", isCorrect: true },
       { src: "/adhkar/a2.png", isCorrect: false },
@@ -36,6 +36,16 @@ const questions = [
   {
     id: 4,
     foreground: "/morning.png",
+    question: "What do you say before eating?",
+    answer: [
+      { src: "/adhkar/d2.png", isCorrect: false },
+      { src: "/adhkar/d3.png", isCorrect: false },
+      { src: "/adhkar/b2.png", isCorrect: true },
+    ],
+  },
+  {
+    id: 5,
+    foreground: "/morning.png",
     question: "What do you say after you finish eating?",
     answer: [
       { src: "/adhkar/d2.png", isCorrect: false },
@@ -43,28 +53,108 @@ const questions = [
       { src: "/adhkar/a1.png", isCorrect: true },
     ],
   },
+  {
+    id: 6,
+    foreground: "/morning.png",
+    question: "What do you say before leaving home?",
+    answer: [
+      { src: "/adhkar/d2.png", isCorrect: false },
+      { src: "/adhkar/d3.png", isCorrect: false },
+      { src: "/adhkar/thw.png", isCorrect: true },
+    ],
+  },
+  {
+    id: 7,
+    foreground: "/morning.png",
+    question: "What do you say when hear the Azan?",
+    answer: [
+      { src: "/adhkar/b3.png", isCorrect: false },
+      { src: "/adhkar/jr.png", isCorrect: true },
+      { src: "/adhkar/thw.png", isCorrect: false },
+    ],
+  },
+  {
+    id: 8,
+    foreground: "/morning.png",
+    question: "What do you say when starting a journey?",
+    answer: [
+      { src: "/adhkar/marb.png", isCorrect: true },
+      { src: "/adhkar/d3.png", isCorrect: false },
+      { src: "/adhkar/thw.png", isCorrect: false },
+    ],
+  },
+  {
+    id: 9,
+    foreground: "/morning.png",
+    question: "What do you say when entering Masjid?",
+    answer: [
+      { src: "/adhkar/a3.png", isCorrect: false },
+      { src: "/adhkar/entym.png", isCorrect: true },
+      { src: "/adhkar/d2.png", isCorrect: false },
+    ],
+  },
+  {
+    id: 10,
+    foreground: "/morning.png",
+    question: "What do you say when you go out of Masjid?",
+    answer: [
+      { src: "/adhkar/entym.png", isCorrect: false },
+      { src: "/adhkar/GGG.png", isCorrect: true },
+      { src: "/adhkar/EXIT.png", isCorrect: true },
+    ],
+  },
+  {
+    id: 11,
+    foreground: "/morning.png",
+    question: "What do you say when you hear the name of Prophet Muhammed?",
+    answer: [
+      { src: "/adhkar/slm.png", isCorrect: false },
+      { src: "/adhkar/sw.png", isCorrect: true },
+      { src: "/adhkar/rz.png", isCorrect: false },
+    ],
+  },
+  {
+    id: 12,
+    foreground: "/morning.png",
+    question: "What do you say when you have a good news?",
+    answer: [
+      { src: "/adhkar/c1.png", isCorrect: false },
+      { src: "/adhkar/c2.png", isCorrect: false },
+      { src: "/adhkar/c3.png", isCorrect: true },
+    ],
+  },
+  {
+    id: 13,
+    foreground: "/morning.png",
+    question: "What do you say when you sleep?",
+    answer: [
+      { src: "/adhkar/sw.png", isCorrect: false },
+      { src: "/adhkar/sleep.png", isCorrect: true },
+      { src: "/adhkar/thw.png", isCorrect: false },
+    ],
+  },
 ];
 
 // Header Component
-const Header = ({ title, linkPath, linkText }) => (
-  <div className='h-32 mx-10 rounded-b-3xl bg-white pb-10'>
-    <Link to={linkPath}>
-      <p className='pl-5 text-blue-800 text-lg top-4'>{linkText}</p>
-    </Link>
-    <h1 className='text-5xl text-indigo-950 font-bold pb-5 text-center'>{title}</h1>
-  </div>
-);
+// const Header = ({ title, linkPath, linkText }) => (
+//   <div className='h-32 mx-10 rounded-b-3xl bg-white pb-10'>
+//     <Link to={linkPath}>
+//       <p className='pl-5 text-blue-800 text-lg top-4'>{linkText}</p>
+//     </Link>
+//     <h1 className='text-5xl text-indigo-950 font-bold pb-5 text-center'>{title}</h1>
+//   </div>
+// );
 
 // Question Component
 const Question = ({ questionImage }) => (
-  <div>
-    <h1 className='bg-yellow-500  shadow-yellow-200 shadow-2xl px-3  rounded-full py-7 tracking-tight uppercase  mb-7 mx-4 text-3xl font-semibold text-white text-center'>{questionImage}</h1>
+  <div className='pt-6'>
+    <h1 className='bg-yellow-500   shadow-2xl px-3  rounded-[3rem] py-7 tracking-tight uppercase  mb-7 mx-4 leading-7 text-2xl font-mont  font-bold text-white text-center'>{questionImage}</h1>
   </div>
 );
 
 // Answer Option Component
 const AnswerOption = ({ image, altText, onClick }) => (
-  <div className="w-44 rounded-xl cursor-pointer" onClick={onClick}>
+  <div className="w-48 rounded-xl cursor-pointer" onClick={onClick}>
     <img src={image} alt={altText} />
   </div>
 );
@@ -74,7 +164,7 @@ const Modal = ({ message, onClose, onRetry, isCorrect }) => {
   const modalBackgroundColor = isCorrect ? 'bg-green-500' : 'bg-red-500';
   
   return (
-    <div className="fixed inset-0 z-30 flex items-center justify-center bg-black/50">
+    <div className="fixed inset-0 z-30 flex items-center justify-center bg-black/50 ">
       <div className={`rounded-lg p-5 text-center ${modalBackgroundColor}`}>
         <h2 className="text-2xl font-bold mb-4 text-white">{message}</h2>
         <button
@@ -179,20 +269,22 @@ const Adhkar = () => {
         <img src={currentQuestion.foreground} alt='Foreground' className='object-cover mb-4' />
       </div>
 
-      <div className='max-w-md mx-auto relative z-10'>
+      <div className='max-w-md mx-auto relative z-10 py-20'>
         {/* Header */}
-        <Header title='Adhkhar' linkPath='/' linkText='Home' />
+        {/* <Header title='Adhkhar' linkPath='/' linkText='Home' /> */}
 
         {/* Question Index Display */}
         <div className="text-center my-4">
-          <h2 className="text-xl">Question {currentQuestionIndex + 1} of {questions.length}</h2>
+        <h2 className="inline text-2xl bg-indigo-500 shadow-inner px-5 py-2 font-mont rounded-lg text-white ">
+            Question {currentQuestionIndex + 1} 
+          </h2>
         </div>
 
         {/* Question */}
         <Question questionImage={currentQuestion.question} />
 
         {/* Answer Options */}
-        <div className='flex-center flex-wrap gap-2 py-5'>
+        <div className='flex-center flex-wrap  py-5'>
           {currentQuestion.answer.map(({ src, isCorrect }, index) => (
             <AnswerOption
               key={index}

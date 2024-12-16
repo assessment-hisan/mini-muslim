@@ -228,8 +228,8 @@ const Routine = () => {
 
         {/* Question Index Display */}
         <div className="text-center my-4 pt-10">
-          <h2 className="text-xl">
-            Question {currentQuestionIndex + 1} of {questions.length}
+          <h2 className="inline text-2xl bg-indigo-500 shadow-inner px-5 py-2 font-mont rounded-lg text-white ">
+            Question {currentQuestionIndex + 1} 
           </h2>
         </div>
 
