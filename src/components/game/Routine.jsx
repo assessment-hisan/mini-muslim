@@ -8,26 +8,26 @@ const questions = [
     { src: "/routine/1.2.png", isCorrect: true },
     { src: "/routine/1.3.png", isCorrect: false },
   ] },
-  { id: 2, foreground: "/niskaram.png", question: "/question/q2.png", answer: [
+  { id: 2, foreground: "/niskaram.png", question: "/question/q3.png", answer: [
     { src: "/routine/3.1.png", isCorrect: true },
     { src: "/routine/3.2.png", isCorrect: false },
     { src: "/routine/3.3.png", isCorrect: false },
   ] },
-  { id: 3, foreground: "/bathroom.png", question: "/question/q3.png", answer: [
-    { src: "/routine/2.1.png", isCorrect: true },
+  { id: 3, foreground: "/bathroom.png", question: "/question/q2.png", answer: [
+    { src: "/routine/2.1.png", isCorrect: false },
     { src: "/routine/2.2.png", isCorrect: false },
-    { src: "/routine/2.3.png", isCorrect: false },
+    { src: "/routine/2.3.png", isCorrect: true },
   ] },
-  { id: 4, foreground: "/bathroom.png", question: "/question/q3.png", answer: [
+  { id: 4, foreground: "/bathroom.png", question: "/question/q4.png", answer: [
     { src: "/routine/4.1.png", isCorrect: false },
     { src: "/routine/4.2.png", isCorrect: true },
     { src: "/routine/4.3.png", isCorrect: false },
   ] },
-  { id: 5, foreground: "/bathroom.png", question: "/question/q3.png", answer: [
+  { id: 5, foreground: "/bathroom.png", question: "/question/q5.png", answer: [
     { src: "/routine/5.1.png", isCorrect: false },
     { src: "/routine/5.2.png", isCorrect: true },
   ] },
-  { id: 6, foreground: "/bathroom.png", question: "/question/q3.png", answer: [
+  { id: 6, foreground: "/bathroom.png", question: "/question/q6.png", answer: [
     { src: "/routine/6.1.png", isCorrect: true },
     { src: "/routine/6.2.png", isCorrect: false },
     { src: "/routine/6.3.png", isCorrect: false },
