@@ -3,9 +3,9 @@ import { Link , useNavigate } from 'react-router-dom';
 
 const choiceDetails = [
     { id: 1, img: "/choice/game.png", bg: "#00ac81", text: "Game", link: "/games/routine" },
-    { id: 2, img: "/choice/principles.png", bg: "#e8b400", text: "Principles", link: "/priciples" },
+    { id: 2, img: "/choice/principles.png", bg: "#e8b400", text: "Principles", link: "/principles" },
     { id: 3, img: "/choice/story.png", bg: "#b3082c", text: "Stories", link: "/story" },
-    { id: 4, img: "/choice/information.png", bg: "#0362c4", text: "Key Values", link: "" },
+    { id: 4, img: "/choice/information.png", bg: "#0362c4", text: "Key Values", link: "/values" },
 ];
 
 const Card = ({ containerStyle, img, text }) => (
