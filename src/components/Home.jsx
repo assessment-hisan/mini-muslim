@@ -1,93 +1,92 @@
-import React from 'react'
-import sun from "../assets/clock.svg"
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 const choiceDetails = [
-    { id: 1, img: "/choice/game.png", bg: "#3C6B9F", text: "Game", link : "/games/routine" },
-    { id: 3, img: "/choice/story.png", bg: "#9B6377", text: "Stories",link : "/story" },
-    { id: 2, img: "/choice/principles.png", bg: "#9B6377", text: "Principles", link : "/games/adhkar" },
-    { id: 4, img: "/choice/information.png", bg: "#3C6B9F", text: "key values",link : "" },
-    
-  ];
-  
-const Reward = ()=>{
-return (
-  <div className="flex justify-between items-center gap-10 text-white rounded-xl bg-[#E67817] max-w-[25rem]  py-2 px-3">
-    <img src={sun} alt="" />
-    <h1 className="font-semibold text-xl">spend 30</h1>
-    <div className="bg-white text-[#E67817] px-3 rounded-xl">
-        <h1>claim </h1>
+    { id: 1, img: "/choice/game.png", bg: "#00ac81", text: "Game", link: "/games/routine" },
+    { id: 2, img: "/choice/principles.png", bg: "#e8b400", text: "Principles", link: "/games/adhkar" },
+    { id: 3, img: "/choice/story.png", bg: "#b3082c", text: "Stories", link: "/story" },
+    { id: 4, img: "/choice/information.png", bg: "#0362c4", text: "Key Values", link: "" },
+];
+
+const Card = ({ containerStyle, img, text }) => (
+    <div className="flex flex-col items-center">
+        <div
+            className="rounded-2xl px-4 py-4"
+            style={{ backgroundColor: containerStyle }}
+        >
+            <img src={img} alt={text} className="w-28 h-28  object-cover" />
+            <h1 className="text-xl font-semibold text-white text-center mt-2">
+                {text}
+            </h1>
+        </div>
     </div>
-  </div>
-)
+);
+
+const Home = () => {
+    return (
+        <div className='relative min-h-screen'>
+            {/* Background Image */}
+            <div className='fixed inset-0 z-0'>
+                <img src="/BBGG.jpg" alt="Background" className='object-cover w-full h-full opacity-80' />
+            </div>
+
+            {/* Header Section */}
+            <div className="relative z-30 py-4 pt-12 w-[95%] mx-auto px-2 flex justify-between">
+                <div>
+                <h1 className='font-lucky text-4xl font-bold text-black uppercase '>Mini Muslim</h1>
+                <p className=" font-lucky text-lg text-gray-800 leading-3 pl-1 font-semibold ">Welcome to Mini Muslim</p>
+                </div>
+                <div className='h-14 w-14 bg-blue-700 rounded-lg'> 
+
+                </div>
+            </div>
+
+            {/* Main Content Section */}
+            <div className='absolute w-full z-30 overflow-auto'>
+                <div className="relative w-[95%] mx-auto bg-[#092ca1] h-[200px] flex rounded-[2rem] shadow-lg">
+                    <div className="w-1/2 h-full flex flex-col  text-3xl font-semibold pl-5 text-white">
+                    <p className='text-8xl font-bold font-kids mb-7 leading-[4rem]' >,,</p>
+                    <p className=" font-light text-3xl leading-5 font-mont">Childrens</p>
+                        <p className="font-mont font-bold text-4xl">Enlightment</p>
+                    </div>
+                    <div className="w-1/2 h-full flex items-center justify-center">
+                        <img src="/kid.png" alt="Character" className='h-full object-cover mt-3 mr-2 ' />
+                    </div>
+                </div>
+
+                {/* Choice Selection Section */}
+                <div className='z-10 mt-6'>
+                    <h1 className="text-gray-800 font-semibold text-3xl text-center mb-4">
+                        Select Your Choice
+                    </h1>
+                    <div className="flex flex-wrap justify-center gap-4 p-4 mb-32">
+                        {choiceDetails.map(({ id, img, bg, text, link }) => (
+                            <Link to={link} key={id}>
+                                <Card
+                                    text={text}
+                                    img={img}
+                                    containerStyle={bg}
+                                />
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+            {/* Rewards Section (Commented Out) */}
+            {/* 
+            <div className=''>
+                <h1 className="pl-10 text-3xl font-semibold py-5 text-gray-500">Rewards</h1>
+                <div className="overflow-auto flex flex-col justify-center items-center gap-5 mb-40">
+                    <Reward/>
+                    <Reward/>
+                    <Reward/>
+                    <Reward/>
+                </div>
+            </div> 
+            */}
+        </div>
+    );
 }
 
-  
-  const Card = ({ containerStyle, img, text, textStyle, }) => (
-    <div className="flex flex-col items-center" >
-      <div
-        className="rounded-2xl p-4"
-        style={{ backgroundColor: containerStyle }}
-      >
-        <img src={img} alt={text} className="w-28 h-28 object-cover" />
-      </div>
-      <h1 className="text-lg font-semibold" style={{ color: textStyle }}>
-        {text}
-      </h1>
-    </div>
-  );
-  
-  const Home = ()=>{
-    return (
-      <div>
-        {/* score section  */}
-        <div className="h-44"></div>
-  
-  
-      <div className="w-full bg-primary/80 h-[250px] flex-center">
-        <div className="w-1/2 h-full flex-center text-3xl font-semibold pl-10 text-white">
-          <p className="font-inter font-bold">Explore Mini Muslim</p>
-        </div>
-        <div className="w-1/2 h-full">
-          <img src="/chr-boy.png" alt="Character" />
-        </div>
-      </div>
-  
-      <div>
-        
-        <h1 className="text-gray-500 font-semibold text-2xl text-center my-4">
-          Select your choice
-        </h1>
-        <div className="flex-center flex-wrap gap-4 p-4">
-          {choiceDetails.map(({ id, img, bg, text, link }) => (
-           <Link to={link}>
-           <Card
-           key={id}
-           text={text}
-           link={link}
-           img={img}
-           containerStyle={bg}
-           textStyle={bg}
-         />
-         </Link> 
-          ))}
-        </div>
-      </div>
-       {/* rewards */}
-       <div className=''>
-        <h1 className="pl-10 text-3xl font-semibold py-5 text-gray-500">Rewards</h1>
-       <div className="overflow-auto flex flex-col justify-center items-center gap-5 mb-40">
-        
-        <Reward/>
-        <Reward/>
-        <Reward/>
-        <Reward/>
-  
-      </div>
-       </div>
-    </div>
-    )
-  }
-  
-
-export default Home
+export default Home;

@@ -9,7 +9,9 @@ export default {
     extend: {
       fontFamily: {
         kids: ['kids', 'sans'],
-        inter:['inter'] 
+        inter:['inter'] ,
+        mont  : ['Montserrat'],
+        lucky : ['"Luckiest Guy"']
       },
       colors :{
         primary : "#F38A2D"

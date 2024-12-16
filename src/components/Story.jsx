@@ -65,13 +65,13 @@ const Story = () => {
           className="w-full h-[100vh] object-cover opacity-50"
         />
       </div>
-      <h1 className="text-center py-2 text-3xl font-semibold mb-10">Story Mode</h1>
-
+      {/* <h1 className="text-center py-2 text-3xl font-semibold mb-10">Story Mode</h1> */}
+      <img src="/mrl.png" alt="" className='w-56 mx-auto mb-6'/>
       <div className="grid grid-cols-1 gap-6 px-10 overflow-y-auto">
         {stories.map((story) => (
           <div 
             key={story.id}
-            className="relative cursor-pointer rounded-lg shadow-md hover:shadow-xl transition-all max-w-[25rem] max-h-[20rem]"
+            className="relative  cursor-pointer rounded-lg shadow-md hover:shadow-xl transition-all max-w-[25rem] max-h-[20rem]"
             onClick={() => openModal(story)}
           >
             <img
@@ -80,7 +80,7 @@ const Story = () => {
               className="rounded-lg object-cover w-full h-72"
             />
             {/* Text Overlay */}
-            <h2 className="absolute z-10 bottom-0 left-0 right-0 text-2xl font-bold text-white bg-black bg-opacity-50 p-2 text-center rounded-b-lg uppercase">
+            <h2 className="absolute z-10 bottom-0 left-0 right-0 text-2xl font-bold text-black bg-white  p-2 text-center rounded-b-lg uppercase ">
               {story.heading}
             </h2>
           </div>
