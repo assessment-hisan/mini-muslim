@@ -141,7 +141,7 @@ const Values = () => {
       {/* Modal */}
       {selectedCategory && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
-          <div className="relative bg-white rounded-lg w-[90%] max-w-md max-h-[90vh] overflow-y-auto p-5">
+          <div className="relative bg-white rounded-lg w-[90%] max-w-md max-h-[90vh] my-8 overflow-y-auto p-5">
             <button
               className="absolute top-3 right-3 text-black text-2xl font-bold"
               onClick={closeModal}
