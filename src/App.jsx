@@ -5,6 +5,8 @@ import Empty from './Empty'
 import Adhkar from './components/game/Adhkar'
 import Routine from './components/game/Routine'
 import Story from './components/Story'
+import Priciples from './components/Priciples'
+import Values from './components/Values'
 
 const App = () => {
   return (
@@ -14,6 +16,8 @@ const App = () => {
         <Route path='/games/adhkar' element={<Adhkar/>}/>
         <Route  path='/games/routine' element={<Routine/>}/>
         <Route path='/story' element={<Story/>}/>
+        <Route path="/principles" element={<Priciples/>} />
+        <Route path="/values" element={<Values/>} />
     </Routes>
   )
 }

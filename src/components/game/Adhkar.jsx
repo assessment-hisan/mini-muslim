@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
+import  { useState } from 'react';
+import { FaArrowLeftLong } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 
 // Question Data Array
@@ -269,12 +271,21 @@ const Adhkar = () => {
         <img src={currentQuestion.foreground} alt='Foreground' className='object-cover mb-4' />
       </div>
 
-      <div className='max-w-md mx-auto relative z-10 py-20'>
+    
+
+      <div className='max-w-md mx-auto relative z-10 py-10'>
         {/* Header */}
         {/* <Header title='Adhkhar' linkPath='/' linkText='Home' /> */}
 
         {/* Question Index Display */}
-        <div className="text-center my-4">
+        <div className="text-center my-4 ">
+          <div className='flex items-center justify-between pb-16 '>
+        <Link to="/">
+        <div className='bg-black/10 ring-1 ml-5 ring-black rounded-lg px-4 py-1 text-xl font-mont flex justify-center items-center font-semibold'>
+          <span><FaArrowLeftLong className='mr-2 text-xl'/></span> Home
+        </div>
+        </Link>
+      </div>
         <h2 className="inline text-2xl bg-indigo-500 shadow-inner px-5 py-2 font-mont rounded-lg text-white ">
             Question {currentQuestionIndex + 1} 
           </h2>
