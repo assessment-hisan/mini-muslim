@@ -16,21 +16,31 @@ const questions = [
   {
     id: 2,
     foreground: "/morning.png",
-    question: "/question/q2.png",
+    question: "What do you say when you enter the bathroom?",
     answer: [
-      { src: "/adhkar/b1.png", isCorrect: false },
-      { src: "/adhkar/b2.png", isCorrect: true },
+      { src: "/adhkar/b2.png", isCorrect: false },
+      { src: "/adhkar/b1.png", isCorrect: true },
       { src: "/adhkar/b3.png", isCorrect: false },
     ],
   },
   {
     id: 3,
     foreground: "/morning.png",
-    question: "/question/q3.png",
+    question: "What do you say when you come back from the bathroom?",
     answer: [
-      { src: "/adhkar/c1.png", isCorrect: false },
-      { src: "/adhkar/c2.png", isCorrect: true },
+      { src: "/adhkar/c1.png", isCorrect: true },
+      { src: "/adhkar/c2.png", isCorrect: false },
       { src: "/adhkar/c3.png", isCorrect: false },
+    ],
+  },
+  {
+    id: 4,
+    foreground: "/morning.png",
+    question: "What do you say after you finish eating?",
+    answer: [
+      { src: "/adhkar/d2.png", isCorrect: false },
+      { src: "/adhkar/d3.png", isCorrect: false },
+      { src: "/adhkar/a1.png", isCorrect: true },
     ],
   },
 ];
@@ -87,13 +97,13 @@ const Modal = ({ message, onClose, onRetry, isCorrect }) => {
 const FinalResultsModal = ({ correctAnswers, totalQuestions, onClose }) => (
   <div className="fixed inset-0 z-30 flex items-center justify-center bg-black/50">
     <div className="bg-white rounded-lg p-5 text-center">
-      <h2 className="text-2xl font-bold mb-4">Congratulations!</h2>
+      <h2 className="text-2xl font-bold">Congratulations!</h2>
       <p className="mb-4">
-        You've completed the quiz!
+        
         <br />
-        Correct Answers: {correctAnswers}
+         <span className='text-5xl font-bold text-lime-700 bg-lime-200 px-5'>{correctAnswers}</span>
         <br />
-        Incorrect Answers: {totalQuestions - correctAnswers}
+         <span className='text-3xl font-bold text-orange-700'>{totalQuestions - correctAnswers}</span>
       </p>
       <Link to="/" className="mr-3 px-4 py-2 rounded-lg bg-blue-600 text-white">
         Go Home
