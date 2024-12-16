@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link , useNavigate } from 'react-router-dom';
 
 const choiceDetails = [
     { id: 1, img: "/choice/game.png", bg: "#00ac81", text: "Game", link: "/games/routine" },
@@ -23,12 +23,12 @@ const Card = ({ containerStyle, img, text }) => (
 );
 
 const Home = ({ setActiveTab }) => {
+  const navigate = useNavigate()
   const handleCardClick = (link) => {
       if (link.includes("games")) {
           setActiveTab("game"); // Set active tab to Game component
       } else {
-          // Handle other links if necessary
-          console.log(`Navigating to ${link}`);
+        navigate(link);
       }
   };
     return (
@@ -72,7 +72,7 @@ const Home = ({ setActiveTab }) => {
                     </h1>
                     <div className="flex flex-wrap justify-center gap-4 p-4 mb-32">
                         {choiceDetails.map(({ id, img, bg, text, link }) => (
-                            <div key={id} onClick={() => handleCardClick(link)}>
+                            <div key={id} onClick={() => handleCardClick(link, <Card />)}>
                                 <Card
                                     text={text}
                                     img={img}

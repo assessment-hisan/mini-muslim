@@ -15,13 +15,13 @@ const Game = () => {
     </div>
     <div className="w-full mt-5 flex-center flex-wrap gap-8 pb-32">
         <Link to="/games/routine" aria-label="Daily routine game" >
-            <div className="relative w-72 h-60  rounded-2xl mx-5 drop-shadow-xl hover:bg-yellow-200 transition duration-300">
+            <div className="relative w-72 h-60  rounded-2xl mx-5 drop-shadow-xl  transition duration-300">
                 
                 <img src="/game/daily.png" alt="" className='absolute object-cover'/>
             </div>
         </Link>
         <Link to="/games/adhkar" aria-label="Adhkar routine game">
-            <div className="relative w-72 h-60  rounded-2xl mx-3 drop-shadow-xl  hover:bg-sky-500 transition duration-300">
+            <div className="relative w-72 h-60  rounded-2xl mx-3 drop-shadow-xl   transition duration-300">
                 
                 <img src="/game/dikr.png" alt="" className='absolute object-center'/>
             </div>
