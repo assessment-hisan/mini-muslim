@@ -32,17 +32,37 @@ const questions = [
     { src: "/routine/6.2.png", isCorrect: false },
     { src: "/routine/6.3.png", isCorrect: false },
   ] },
+  { id: 7, foreground: "/bathroom.png", question: "/question/q7.png", answer: [
+    { src: "/routine/7.1.png", isCorrect: true },
+    { src: "/routine/7.2.png", isCorrect: false },
+    { src: "/routine/7.3.png", isCorrect: false },
+  ] },
+  { id: 8, foreground: "/bathroom.png", question: "/question/q8.png", answer: [
+    { src: "/routine/8.1.png", isCorrect: false },
+    { src: "/routine/8.2.png", isCorrect: false },
+    { src: "/routine/8.3.png", isCorrect: true },
+  ] },
+  { id: 9, foreground: "/bathroom.png", question: "/question/q9.png", answer: [
+    { src: "/routine/9.1.png", isCorrect: false },
+    { src: "/routine/9.2.png", isCorrect: true },
+    { src: "/routine/9.3.png", isCorrect: false },
+  ] },
+  { id: 10, foreground: "/bathroom.png", question: "/question/q10.png", answer: [
+    { src: "/routine/10.1.png", isCorrect: false },
+    { src: "/routine/10.2.png", isCorrect: false },
+    { src: "/routine/10.3.png", isCorrect: true },
+  ] },
 ];
 
 // Header Component
-const Header = ({ title, linkPath, linkText }) => (
-  <div className="h-32 mx-10 rounded-b-3xl bg-white pb-10">
-    <Link to={linkPath}>
-      <p className="pl-5 text-blue-800 text-lg top-4">{linkText}</p>
-    </Link>
-    <h1 className="text-5xl text-indigo-950 font-bold pb-5 text-center">{title}</h1>
-  </div>
-);
+// const Header = ({ title, linkPath, linkText }) => (
+//   <div className="h-32 mx-10 rounded-b-3xl bg-white pb-10">
+//     <Link to={linkPath}>
+//       <p className="pl-5 text-blue-800 text-lg top-4">{linkText}</p>
+//     </Link>
+//     <h1 className="text-5xl text-indigo-950 font-bold pb-5 text-center">{title}</h1>
+//   </div>
+// );
 
 // Question Component
 const Question = ({ questionImage }) => (
@@ -112,12 +132,12 @@ const EndModal = ({ correctAnswers, totalQuestions, onClose }) => {
       <div className="bg-white rounded-lg p-5 text-center">
         <h2 className="text-2xl font-bold mb-4">Congratulations!</h2>
         <p className="mb-4">
-          You completed the quiz!
-          <br />
-          Correct Answers: {correctAnswers}
-          <br />
-          Incorrect Answers: {totalQuestions - correctAnswers}
-        </p>
+        
+        <br />
+         <span className='text-5xl font-bold text-lime-700 bg-lime-200 px-5'>{correctAnswers}</span>
+        <br />
+         <span className='text-3xl font-bold text-orange-700'>{totalQuestions - correctAnswers}</span>
+      </p>
         <Link
           to="/"
           className="mr-3 px-4 py-2 rounded-lg bg-blue-600 text-white"
@@ -204,10 +224,10 @@ const Routine = () => {
 
       <div className="max-w-md mx-auto relative z-10">
         {/* Header */}
-        <Header title="Routine" linkPath="/" linkText="Home" />
+        {/* <Header title="Routine" linkPath="/" linkText="Home" /> */}
 
         {/* Question Index Display */}
-        <div className="text-center my-4">
+        <div className="text-center my-4 pt-10">
           <h2 className="text-xl">
             Question {currentQuestionIndex + 1} of {questions.length}
           </h2>
