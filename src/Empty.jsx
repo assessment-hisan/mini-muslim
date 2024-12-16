@@ -31,7 +31,7 @@ function Empty() {
       {/* Main Content */}
       <div className="w-full max-w-md flex-1 bg-white overflow-auto">
         {activeTab === "home" && (
-          <Home/>
+          <Home setActiveTab={setActiveTab}/>
         )}
         {activeTab === "game" && (
           <Game/>

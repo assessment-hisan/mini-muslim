@@ -22,7 +22,15 @@ const Card = ({ containerStyle, img, text }) => (
     </div>
 );
 
-const Home = () => {
+const Home = ({ setActiveTab }) => {
+  const handleCardClick = (link) => {
+      if (link.includes("games")) {
+          setActiveTab("game"); // Set active tab to Game component
+      } else {
+          // Handle other links if necessary
+          console.log(`Navigating to ${link}`);
+      }
+  };
     return (
         <div className='relative min-h-screen'>
             {/* Background Image */}
@@ -33,8 +41,8 @@ const Home = () => {
             {/* Header Section */}
             <div className="relative z-30 py-5 pt-12 w-[95%] mx-auto px-2 flex justify-between items-center">
                 <div>
-                <h1 className='font-lucky text-[3rem]  text-black uppercase leading-8'>Mini Muslim</h1>
-                <p className=" font-mont text-lg text-gray-800 leading-5 pl-1 font-semibold ">Welcome to Mini Muslim</p>
+                <h1 className='font-lucky text-[2rem]  text-black uppercase tracking-widest'>Mini Muslim</h1>
+                <p className=" font-mont text-base text-gray-800 leading-5 pl-1 font-semibold ">Welcome to Mini Muslim</p>
                 </div>
                 <div className='h-14 w-14 bg-blue-700 rounded-lg'> 
 
@@ -44,12 +52,12 @@ const Home = () => {
             {/* Main Content Section */}
             <div className='absolute w-full z-30 overflow-auto'>
                 <div className="relative w-[95%] mx-auto bg-[#092ca1] h-[200px] flex rounded-[2rem] shadow-lg ">
-                    <div className="w-1/2 h-full flex flex-col  text-3xl font-semibold pl-5 text-white ">
+                    <div className="w-1/2 h-full flex flex-col  text-3xl font-semibold pl-3 text-white ">
                     <p className='text-6xl font-bold font-kids mb-7 leading-[4rem]' >,,</p>
                     <p className=" font-light text-2xl leading-5 font-mont">Childrens</p>
                         <p className="font-mont font-bold text-3xl">Enlightenment</p>
                     </div>
-                    <div className="w-1/2 h-full flex items-center justify-center bg-clip-padding">
+                    <div className="w-1/2 h-full flex items-center justify-center">
                         <img src="/kid.png" alt="Character" className='h-full object-cover mt-3 mr-2 ' style={{
     clipPath: 'polygon(0 0, 0 0, 0 100%, 100% calc(100% - 10px), calc(100% - 10px) 10%)'
 }}
@@ -64,13 +72,13 @@ const Home = () => {
                     </h1>
                     <div className="flex flex-wrap justify-center gap-4 p-4 mb-32">
                         {choiceDetails.map(({ id, img, bg, text, link }) => (
-                            <Link to={link} key={id}>
+                            <div key={id} onClick={() => handleCardClick(link)}>
                                 <Card
                                     text={text}
                                     img={img}
                                     containerStyle={bg}
                                 />
-                            </Link>
+                            </div>
                         ))}
                     </div>
                 </div>
