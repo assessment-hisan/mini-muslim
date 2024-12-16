@@ -90,10 +90,10 @@ const Story = () => {
         className="h-full bg-cover bg-no-repeat"
         style={{ backgroundImage: `url(${selectedStory.bg})` }}
       >
-        <img src="/forgiveness.png" alt="" className='h-44 mx-auto pt-10'/>
+        <img src="/forgiveness.png" alt="" className='h-32 sm:h-44 mx-auto pt-10 '/>
         {/* Story Content */}
-        <div className="absolute inset-x-0 bottom-[20%]  p-6 text-lg text-gray-700 h-[55%] overflow-y-auto bg-gray-800/10 m-5"> {/* Adjusted height for scrollable content */}
-          <p className='font-semibold text-xl text-black text-justify'>{selectedStory.content}</p>
+        <div className="absolute inset-x-0 bottom-[20%]  p-6 text-lg text-gray-700 h-[55%] overflow-y-auto bg-gray-800/10 m-5 rounded-2xl"> {/* Adjusted height for scrollable content */}
+          <p className='font-medium text-base sm:text-xl text-black text-justify'>{selectedStory.content}</p>
         </div>
       </div>
     </div>
