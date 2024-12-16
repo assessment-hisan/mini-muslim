@@ -3,37 +3,31 @@ import React, { useState } from 'react';
 const stories = [
   {
     id: 1,
-    image: '/story1.jpg',
+    image: '/routine/1.1.png',
     heading: 'Story 1',
     content: 'This is the story of adventure and discovery. A tale that will captivate your imagination.',
   },
   {
     id: 2,
-    image: '/story2.jpg',
+    image: '/routine/1.2.png', // Update to different images for variety
     heading: 'Story 2',
     content: 'An inspiring journey of courage and resilience. Dive into the narrative of overcoming odds.',
   },
   {
     id: 3,
-    image: '/story3.jpg',
+    image: '/routine/1.3.png',
     heading: 'Story 3',
     content: 'A whimsical story of magic and wonder. Let yourself be enchanted by this captivating tale.',
   },
   {
     id: 4,
-    image: '/story4.jpg',
+    image: '/routine/1.4.png',
     heading: 'Story 4',
     content: 'Explore the depths of friendship and loyalty through this touching narrative.',
   },
   {
     id: 5,
-    image: '/story5.jpg',
-    heading: 'Story 5',
-    content: 'A thrilling story filled with suspense and unexpected twists. Get ready for an adventure!',
-  },
-  {
-    id: 8,
-    image: '/routine/1.1.png',
+    image: '/routine/1.5.png',
     heading: 'Story 5',
     content: 'A thrilling story filled with suspense and unexpected twists. Get ready for an adventure!',
   },
@@ -51,22 +45,25 @@ const Story = () => {
   };
 
   return (
-    <div className='view bg-slate-300 min-h-screen py-10'>
+    <div className='view bg-slate-300 h-full py-10'>
       <h1 className="text-center py-10 text-3xl font-semibold">Story Mode</h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-10">
+      <div className="grid grid-cols-1  gap-6 px-10 my-10 overflow-y-auto">
         {stories.map((story) => (
-          <div
+          <div 
             key={story.id}
-            className="cursor-pointer bg-white rounded-lg shadow-md hover:shadow-xl transition-all"
+            className="relative cursor-pointer rounded-lg shadow-md hover:shadow-xl transition-all max-w-[25rem] max-h-[20rem]"
             onClick={() => openModal(story)}
           >
             <img
               src={story.image}
               alt={story.heading}
-              className="rounded-t-lg object-cover w-full h-40"
+              className="rounded-lg object-cover w-full h-40 "
             />
-            <h2 className="text-xl font-semibold text-center py-4">{story.heading}</h2>
+            {/* Text Overlay */}
+            <h2 className="absolute z-10 bottom-0 left-0 right-0 text-xl font-semibold text-white bg-black bg-opacity-10 p-2 text-center rounded-b-lg">
+              {story.heading}
+            </h2>
           </div>
         ))}
       </div>
