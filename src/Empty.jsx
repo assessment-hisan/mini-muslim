@@ -20,20 +20,37 @@ const tabs = [
 // Modal Component
 const Modal = ({ onClose }) => {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="bg-white p-6 h-screen rounded shadow-lg ">
-        <h2 className="text-xl font-bold">Welcome!</h2>
+    <div className="fixed inset-0 z-40 bg-black bg-opacity-50">
+      <div className="bg-white p-6 h-screen w-full rounded shadow-lg">
+        <div className="fixed inset-0 z-0">
+          <img
+            src="/main.jpg"
+            alt="Background"
+            className="object-cover w-full h-full opacity-80 "
+          />
+        </div>
+        {/* You can uncomment this section if you want a header and a "Continue" button */}
+        {/* <h2 className="text-xl font-bold">Welcome!</h2>
         <p className="mt-2">Thank you for using our app. Click "Continue" to get started.</p>
         <button
           onClick={onClose}
           className="mt-4 px-4 py-2 bg-orange-500 text-white rounded animate-bounce"
         >
           Continue
+        </button> */}
+      </div>
+      <div className="w-full h-32 bg-blue-700 flex justify-center items-center z-50">
+        <button
+          onClick={onClose}
+          className="px-6 py-2 text-white bg-blue-800 rounded hover:bg-blue-900"
+        >
+          Start Now
         </button>
       </div>
     </div>
   );
 };
+
 
 function Empty() {
   const [activeTab, setActiveTab] = useState("home");
