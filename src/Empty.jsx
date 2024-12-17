@@ -18,8 +18,11 @@ const tabs = [
   { id: "profile", label: "About", filled: profileFilled, outline: profileOutline },
 ];
 
+
+
+
 const Modal = ({ onClose }) => {
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(0); // Start from step 0
   const content = [
     {
       id: 1,
@@ -38,6 +41,15 @@ const Modal = ({ onClose }) => {
     },
   ];
 
+  useEffect(() => {
+    if (currentStep === 0) {
+      const timer = setTimeout(() => {
+        setCurrentStep(1); // Move to the next step after 500ms
+      }, 1000);
+      return () => clearTimeout(timer); // Clean up the timer
+    }
+  }, [currentStep]);
+
   const handleSkip = () => {
     setCurrentStep(4); // Skip to the "Start Now" section
   };
@@ -46,9 +58,33 @@ const Modal = ({ onClose }) => {
     setCurrentStep((prevStep) => prevStep + 1); // Go to the next section
   };
 
+  const handleTouch = () => {
+    if (currentStep === 0) {
+      setCurrentStep(1); // Move to the next step if user touches the div
+    }
+  };
+
   return (
     <div className="fixed inset-0 z-40 bg-black bg-opacity-50 flex items-center justify-center">
-      {currentStep <= 3 && (
+      {/* Logo Section (Step 0) */}
+      {currentStep === 0 && (
+        <div
+          className="bg-blue-900 h-screen w-full flex items-center justify-center relative"
+          onTouchStart={handleTouch} // Detect touch interaction
+        >
+          {/* Logo */}
+          <img
+            src="/logowhite.png" // Path to your white logo
+            alt="Logo"
+            className="z-10 w-40" // Adjust size as needed
+          />
+          {/* Background effect (optional) */}
+          <div className="absolute inset-0 bg-blue-900 opacity-80"></div>
+        </div>
+      )}
+
+      {/* Skip/Continue Section (Steps 1–3) */}
+      {currentStep >= 1 && currentStep <= 3 && (
         <div className="bg-white p-6 h-screen w-full rounded shadow-lg relative">
           {/* Background image for the first three sections */}
           <div className="fixed inset-0 z-0">
@@ -84,28 +120,30 @@ const Modal = ({ onClose }) => {
         </div>
       )}
 
-{currentStep === 4 && (
-  <div className="bg-white p-6 h-screen w-full rounded shadow-lg relative flex items-end  justify-center">
-    {/* Background image for the "Start Now" section */}
-    <div className="fixed inset-0 z-0">
-      <img
-        src="/main.jpg"
-        alt="Background"
-        className="object-cover w-full h-full"
-      />
-    </div>
-    {/* Start Now Section */}
-    <button
-      onClick={onClose}
-      className="relative z-10 font-lucky py-2 px-4 pb-12 text-blue-100 text-4xl animate-bounce  rounded-lg"
-    >
-      Start Now
-    </button>
-  </div>
-)}
+      {/* Start Now Section (Step 4) */}
+      {currentStep === 4 && (
+        <div className="bg-white p-6 h-screen w-full rounded shadow-lg relative flex items-end justify-center">
+          {/* Background image for the "Start Now" section */}
+          <div className="fixed inset-0 z-0">
+            <img
+              src="/main.jpg"
+              alt="Background"
+              className="object-cover w-full h-full"
+            />
+          </div>
+          {/* Start Now Section */}
+          <button
+            onClick={onClose}
+            className="relative z-10 font-lucky py-2 px-4 pb-12 text-blue-100 text-4xl animate-bounce rounded-lg"
+          >
+            Start Now
+          </button>
+        </div>
+      )}
     </div>
   );
 };
+
 
 
 

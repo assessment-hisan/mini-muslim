@@ -71,7 +71,7 @@ const questions = [
     question: "What do you say when hear the Azan?",
     answer: [
       { src: "/adhkar/b3.png", isCorrect: false },
-      { src: "/adhkar/jr.png", isCorrect: true },
+      { src: "/adhkar/marb.png", isCorrect: true },
       { src: "/adhkar/thw.png", isCorrect: false },
     ],
   },
@@ -80,7 +80,7 @@ const questions = [
     foreground: "/morning.png",
     question: "What do you say when starting a journey?",
     answer: [
-      { src: "/adhkar/marb.png", isCorrect: true },
+      { src: "/adhkar/jr.png", isCorrect: true },
       { src: "/adhkar/d3.png", isCorrect: false },
       { src: "/adhkar/thw.png", isCorrect: false },
     ],
@@ -137,16 +137,7 @@ const questions = [
   },
 ];
 
-// Header Component
-// const Header = ({ title, linkPath, linkText }) => (
-//   <div className='h-32 mx-10 rounded-b-3xl bg-white pb-10'>
-//     <Link to={linkPath}>
-//       <p className='pl-5 text-blue-800 text-lg top-4'>{linkText}</p>
-//     </Link>
-//     <h1 className='text-5xl text-indigo-950 font-bold pb-5 text-c
-// enter'>{title}</h1>
-//   </div>
-// );
+
 
 // Question Component
 const Question = ({ questionImage }) => (
@@ -162,30 +153,36 @@ const AnswerOption = ({ image, altText, onClick }) => (
   </div>
 );
 
-// Modal Component for Answer Feedback
 const Modal = ({ message, onClose, onRetry, isCorrect }) => {
   const modalBackgroundColor = isCorrect ? 'bg-green-500' : 'bg-red-500';
-  
+
   return (
-    <div className="fixed inset-0 z-30 flex items-center justify-center bg-black/50 ">
-      <div className={`rounded-lg p-5 text-center ${modalBackgroundColor}`}>
+    <div className="fixed inset-0 z-30 flex items-center justify-center bg-black/50">
+      <div className={`rounded-lg p-5 text-center ${modalBackgroundColor} relative`}>
+        
+
+        {/* Feedback Message */}
         <h2 className="text-2xl font-bold mb-4 text-white">{message}</h2>
-        <button
-          onClick={onRetry}
-          className="mr-3 px-4 py-2 rounded-lg bg-yellow-500 text-white"
-        >
-          Retry
-        </button>
-        <button
-          onClick={onClose}
-          className={`px-4 py-2 rounded-lg text-white ${isCorrect ? 'bg-blue-600' : 'bg-gray-600'}`}>
-          {isCorrect ? 'Next' : 'Skip'}
-        </button>
+
+        {/* Buttons */}
+        <div className="flex justify-center gap-3">
+          <button
+            onClick={onRetry}
+            className="px-4 py-2 rounded-lg bg-yellow-500 text-white"
+          >
+            Retry
+          </button>
+          <button
+            onClick={onClose}
+            className={`px-4 py-2 rounded-lg text-white ${isCorrect ? 'bg-blue-600' : 'bg-gray-600'}`}
+          >
+            {isCorrect ? 'Next' : 'Skip'}
+          </button>
+        </div>
       </div>
     </div>
   );
 };
-
 // Final Results Modal Component
 const FinalResultsModal = ({ correctAnswers, totalQuestions, onClose }) => (
   <div className="fixed inset-0 z-30 flex items-center justify-center bg-black/50">

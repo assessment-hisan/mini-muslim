@@ -29,6 +29,7 @@ const questions = [
   ] },
   { id: 5, foreground: "/bathroom.png", question: "/question/q5.png", answer: [
     { src: "/routine/5.1.png", isCorrect: false },
+    { src: "/routine/4.1.png", isCorrect: false },
     { src: "/routine/5.2.png", isCorrect: true },
   ] },
   { id: 6, foreground: "/bathroom.png", question: "/question/q6.png", answer: [
