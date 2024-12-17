@@ -17,39 +17,96 @@ const tabs = [
   { id: "profile", label: "Profile", filled: profileFilled, outline: profileOutline },
 ];
 
-// Modal Component
 const Modal = ({ onClose }) => {
+  const [currentStep, setCurrentStep] = useState(1);
+  const content = [
+    {
+      id: 1,
+      text: "Islamic Routines",
+      sub: "Make daily dhikr and dua practices a habit by integrating them into a fun game",
+    },
+    {
+      id: 2,
+      text: "Dhikr and Dua",
+      sub: "Make your spiritual practice a daily habit, one level at a time.",
+    },
+    {
+      id: 3,
+      text: "Moral Values",
+      sub: "Through consistent engagement, children will develop a strong foundation of Islamic values",
+    },
+  ];
+
+  const handleSkip = () => {
+    setCurrentStep(4); // Skip to the "Start Now" section
+  };
+
+  const handleContinue = () => {
+    setCurrentStep((prevStep) => prevStep + 1); // Go to the next section
+  };
+
   return (
-    <div className="fixed inset-0 z-40 bg-black bg-opacity-50">
-      <div className="bg-white p-6 h-screen w-full rounded shadow-lg">
-        <div className="fixed inset-0 z-0">
-          <img
-            src="/main.jpg"
-            alt="Background"
-            className="object-cover w-full h-full"
-          />
+    <div className="fixed inset-0 z-40 bg-black bg-opacity-50 flex items-center justify-center">
+      {currentStep <= 3 && (
+        <div className="bg-white p-6 h-screen w-full rounded shadow-lg relative">
+          {/* Background image for the first three sections */}
+          <div className="fixed inset-0 z-0">
+            <img
+              src={`/b${currentStep}.jpg`}
+              alt={`Section ${currentStep}`}
+              className="object-cover w-full h-full"
+            />
+          </div>
+          {/* Content */}
+          <div className="absolute top-1/3 z-10 flex flex-col items-center justify-center h-full">
+            <h2 className="text-4xl font-semibold font-mont mb-1 text-white">
+              {content[currentStep - 1].text} {/* Subtract 1 to match the array index */}
+            </h2>
+            <p className="text-base mb-4 text-gray-200 text-center font-mont max-w-[22rem] leading-5 mx-auto">
+              {content[currentStep - 1].sub} {/* Subtract 1 to match the array index */}
+            </p>
+            <div className="flex flex-col gap-2 mt-4">
+              <button
+                onClick={handleContinue}
+                className="animate-bounce px-8 py-2 bg-blue-900 text-white rounded-full ring-1 ring-blue-900 hover:bg-blue-700 font-bold text-xl"
+              >
+                Continue
+              </button>
+              <button
+                onClick={handleSkip}
+                className="px-6 py-2 bg-white font-semibold text-xl text-blue-900 ring-1 ring-blue-900 rounded-full hover:bg-red-700"
+              >
+                Skip
+              </button>
+            </div>
+          </div>
         </div>
-        
-        
-        
-        <button
-          onClick={onClose}
-          className="absolute bottom-10 left-20 mt-4  font-lucky   py-2 text-blue-100 text-5xl  animate-bounce"
-        >
-          start Now
-        </button> 
-      </div>
-      <div className="w-full h-32 bg-blue-700 flex justify-center items-center z-50">
-        <button
-          onClick={onClose}
-          className="px-6 py-2 text-white bg-blue-800 rounded hover:bg-blue-900"
-        >
-          Start Now
-        </button>
-      </div>
+      )}
+
+{currentStep === 4 && (
+  <div className="bg-white p-6 h-screen w-full rounded shadow-lg relative flex items-end  justify-center">
+    {/* Background image for the "Start Now" section */}
+    <div className="fixed inset-0 z-0">
+      <img
+        src="/main.jpg"
+        alt="Background"
+        className="object-cover w-full h-full"
+      />
+    </div>
+    {/* Start Now Section */}
+    <button
+      onClick={onClose}
+      className="relative z-10 font-lucky py-2 px-4 pb-12 text-blue-100 text-4xl animate-bounce  rounded-lg"
+    >
+      Start Now
+    </button>
+  </div>
+)}
     </div>
   );
 };
+
+
 
 
 function Empty() {
