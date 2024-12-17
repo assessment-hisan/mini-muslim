@@ -44,8 +44,8 @@ const Home = ({ setActiveTab }) => {
                 <h1 className='font-lucky text-[2rem]  text-black uppercase leading-8 tracking-wide'>Mini Muslim</h1>
                 <p className=" font-mont text-base text-gray-800 leading-3  font-semibold ">Welcome to Mini Muslim</p>
                 </div>
-                <div className='h-12 max-w-44 bg-blue-700/40 rounded-lg'> 
-
+                <div className='h-12 max-w-44 bg-black/80 px-2 rounded-lg'> 
+                    <img src="/logowhite.png" alt=""  className='w-12'/>
                 </div>
             </div>
 

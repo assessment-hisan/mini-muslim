@@ -281,7 +281,7 @@ const SeventhModal = ({ onClose }) => {
                 <li>Maymunah bint al-Harith (RA)</li>
               </ul>
               <h2 className="text-3xl font-bold text-center font-lucky text-blue-700 mt-4">Children</h2>
-              <ul className="text-lg text-center list-disc px-8 space-y-2">
+              <ul className="text-lg text-center list-none px-8 space-y-2">
                 <li><strong>Qasim ibn Muhammad</strong></li>
                 <li><strong>Abdullah ibn Muhammad</strong> (also known as Tayyib and Tayyir)</li>
                 <li><strong>Zainab bint Muhammad</strong></li>
@@ -344,7 +344,7 @@ const Priciples = () => {
                 key={item.id}
                 style={{ background: item.color }}
                 onClick={() => setSelectedItem(item)}
-                className="para p-4 flex justify-center items-center h-44 bg-gray-200 text-center rounded cursor-pointer hover:bg-gray-300"
+                className="para p-4 flex justify-center items-center h-36 bg-gray-200 text-center rounded cursor-pointer hover:bg-gray-300"
               >
                 {item.title}
               </div>
@@ -372,7 +372,7 @@ const Priciples = () => {
                 key={item.id}
                 style={{ background: item.color }}
                 onClick={() => setSelectedItem(item)}
-                className="para flex justify-center items-center h-44 p-4 bg-gray-200 text-center rounded cursor-pointer hover:bg-gray-300"
+                className="para flex justify-center items-center h-36 p-4 bg-gray-200 text-center rounded cursor-pointer hover:bg-gray-300"
               >
                 {item.title}
               </div>

@@ -45,7 +45,7 @@ const Modal = ({ onClose }) => {
     if (currentStep === 0) {
       const timer = setTimeout(() => {
         setCurrentStep(1); // Move to the next step after 500ms
-      }, 1000);
+      }, 3000);
       return () => clearTimeout(timer); // Clean up the timer
     }
   }, [currentStep]);
@@ -76,7 +76,7 @@ const Modal = ({ onClose }) => {
           <img
             src="/logowhite.png" // Path to your white logo
             alt="Logo"
-            className="z-10 w-40" // Adjust size as needed
+            className="z-10 w-80" // Adjust size as needed
           />
           {/* Background effect (optional) */}
           <div className="absolute inset-0 bg-blue-900 opacity-80"></div>
@@ -126,7 +126,7 @@ const Modal = ({ onClose }) => {
           {/* Background image for the "Start Now" section */}
           <div className="fixed inset-0 z-0">
             <img
-              src="/main.jpg"
+              src="/main.png"
               alt="Background"
               className="object-cover w-full h-full"
             />
@@ -134,7 +134,7 @@ const Modal = ({ onClose }) => {
           {/* Start Now Section */}
           <button
             onClick={onClose}
-            className="relative z-10 font-lucky py-2 px-4 pb-12 text-blue-100 text-4xl animate-bounce rounded-lg"
+            className="relative z-10 font-lucky py-2 px-4 pb-20 text-blue-100 text-5xl animate-bounce rounded-lg"
           >
             Start Now
           </button>
