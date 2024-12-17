@@ -215,6 +215,13 @@ const Adhkar = () => {
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [modalState, setModalState] = useState({ message: null, isCorrect: null });
   const [showFinalResultsModal, setShowFinalResultsModal] = useState(false);
+  
+  const [isNotificationOpen, setIsNotificationOpen] = useState(false);
+
+  const toggleNotifications = () => {
+    setIsNotificationOpen((prev) => !prev);
+  };
+
 
   const currentQuestion = questions[currentQuestionIndex];
 
@@ -284,8 +291,21 @@ const Adhkar = () => {
                         </div>
                         </Link>
                         <div className=''>
-                          <IoNotificationsCircle className='text-[2.7rem] text-black'/>
+                          <IoNotificationsCircle  onClick={toggleNotifications} className='text-[2.7rem] text-black'/>
                         </div>
+                        {/* Notification Dropdown */}
+              {isNotificationOpen && (
+                <div className="absolute right-5 top-5 mt-2 w-64 bg-white border border-gray-300 rounded-lg shadow-lg z-20">
+                  <div className="p-4">
+                    <h3 className="text-lg font-semibold text-gray-800">Notifications</h3>
+                  </div>
+                  <ul className="divide-y divide-gray-200">
+                    <li className="p-3 text-gray-700 hover:bg-gray-100">You have a new message!</li>
+                    <li className="p-3 text-gray-700 hover:bg-gray-100">Your event starts in 30 minutes.</li>
+                    <li className="p-3 text-gray-700 hover:bg-gray-100">Reminder: Meeting at 3 PM.</li>
+                  </ul>
+                </div>
+              )}
                       </div>
         <h2 className="inline text-2xl bg-indigo-500 shadow-inner px-5 py-2 font-mont rounded-lg text-white ">
             Question {currentQuestionIndex + 1} 

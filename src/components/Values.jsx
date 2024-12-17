@@ -115,7 +115,11 @@ const Values = () => {
   const closeModal = () => {
     setSelectedCategory(null);
   };
+const [isNotificationOpen, setIsNotificationOpen] = useState(false);
 
+  const toggleNotifications = () => {
+    setIsNotificationOpen((prev) => !prev);
+  };
   return (
     <div className="relative h-screen flex flex-col items-center justify-center">
       {/* Background */}
@@ -133,9 +137,21 @@ const Values = () => {
           <span><FaArrowLeftLong className='mr-2 text-lg'/></span> Back
         </div>
         </Link>
-        <div className=''>
-          <IoNotificationsCircle className='text-[2.7rem] text-black'/>
-        </div>
+       <div className=''>
+                       <IoNotificationsCircle onClick={toggleNotifications} className='text-[2.7rem] text-black'/>
+                     </div>
+                     {isNotificationOpen && (
+                       <div className="absolute right-5 top-5 mt-2 w-64 bg-white border border-gray-300 rounded-lg shadow-lg z-50">
+                         <div className="p-4">
+                           <h3 className="text-lg font-semibold text-gray-800">Notifications</h3>
+                         </div>
+                         <ul className="divide-y divide-gray-200">
+                           <li className="p-3 text-gray-700 hover:bg-gray-100">You have a new message!</li>
+                           <li className="p-3 text-gray-700 hover:bg-gray-100">Your event starts in 30 minutes.</li>
+                           <li className="p-3 text-gray-700 hover:bg-gray-100">Reminder: Meeting at 3 PM.</li>
+                         </ul>
+                       </div>
+                     )}
       </div>
       {/* Main Content */}
       <div className="relative z-10 flex flex-col justify-center items-center gap-y-5">
