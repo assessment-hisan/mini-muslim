@@ -18,3 +18,6 @@
 .view {
   @apply h-screen max-w-md mx-auto
 }
+.para {
+  @apply font-lucky text-4xl text-white rounded-xl
+}

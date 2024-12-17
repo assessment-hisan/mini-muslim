@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
 import Game from "./components/Game";
@@ -11,34 +11,56 @@ import playOutline from "./assets/nav-svg/playUN.svg";
 import profileFilled from "./assets/nav-svg/profile.svg";
 import profileOutline from "./assets/nav-svg/profileUN.svg";
 
-
-import { Route, Router } from "react-router-dom";
-
-
-
 const tabs = [
   { id: "home", label: "Home", filled: homeFilled, outline: homeOutline },
   { id: "game", label: "Game", filled: playFilled, outline: playOutline },
   { id: "profile", label: "Profile", filled: profileFilled, outline: profileOutline },
 ];
 
+// Modal Component
+const Modal = ({ onClose }) => {
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+      <div className="bg-white p-6 h-screen rounded shadow-lg ">
+        <h2 className="text-xl font-bold">Welcome!</h2>
+        <p className="mt-2">Thank you for using our app. Click "Continue" to get started.</p>
+        <button
+          onClick={onClose}
+          className="mt-4 px-4 py-2 bg-orange-500 text-white rounded animate-bounce"
+        >
+          Continue
+        </button>
+      </div>
+    </div>
+  );
+};
 
 function Empty() {
   const [activeTab, setActiveTab] = useState("home");
+  const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    // Check if modal has been shown before
+    const hasSeenModal = sessionStorage.getItem("hasSeenModal");
+
+    if (!hasSeenModal) {
+      setShowModal(true); // Show modal only once
+      sessionStorage.setItem("hasSeenModal", "true");
+    }
+  }, []);
+
+  const handleCloseModal = () => {
+    setShowModal(false); // Close modal
+  };
 
   return (
     <div className="h-screen flex flex-col items-center bg-gray-100">
       {/* Main Content */}
       <div className="w-full max-w-md flex-1 bg-white overflow-auto">
-        {activeTab === "home" && (
-          <Home setActiveTab={setActiveTab}/>
-        )}
-        {activeTab === "game" && (
-          <Game/>
-        )}
+        {activeTab === "home" && <Home setActiveTab={setActiveTab} />}
+        {activeTab === "game" && <Game />}
         {activeTab === "profile" && (
           <div className="p-6 text-center">
-            {/* Profile Content */}
             <h1 className="text-3xl font-bold">Profile Section</h1>
             <p className="text-gray-600 mt-4">View and edit your profile details.</p>
           </div>
@@ -46,7 +68,7 @@ function Empty() {
       </div>
 
       {/* Bottom Navigation Bar */}
-      <div className="w-full  fixed z-30 bottom-0  max-w-md mx-auto bg-white shadow-md flex justify-around py-3 border-t">
+      <div className="w-full fixed z-30 bottom-0 max-w-md mx-auto bg-white shadow-md flex justify-around py-3 border-t">
         {tabs.map((tab) => (
           <button
             key={tab.id}
@@ -64,7 +86,9 @@ function Empty() {
           </button>
         ))}
       </div>
-     
+
+      {/* Modal for First-Time Users */}
+      {showModal && <Modal onClose={handleCloseModal} />}
     </div>
   );
 }
