@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import { FcAbout } from "react-icons/fc";
 
 import Game from "./components/Game";
 import Home from "./components/Home";
-
+import About from './components/About'
 import homeFilled from "./assets/nav-svg/home.svg";
 import homeOutline from "./assets/nav-svg/homeUN.svg";
 import playFilled from "./assets/nav-svg/play.svg";
@@ -14,7 +15,7 @@ import profileOutline from "./assets/nav-svg/profileUN.svg";
 const tabs = [
   { id: "home", label: "Home", filled: homeFilled, outline: homeOutline },
   { id: "game", label: "Game", filled: playFilled, outline: playOutline },
-  { id: "profile", label: "Profile", filled: profileFilled, outline: profileOutline },
+  { id: "profile", label: "About", filled: profileFilled, outline: profileOutline },
 ];
 
 const Modal = ({ onClose }) => {
@@ -133,12 +134,7 @@ function Empty() {
       <div className="w-full max-w-md flex-1 bg-white overflow-auto">
         {activeTab === "home" && <Home setActiveTab={setActiveTab} />}
         {activeTab === "game" && <Game />}
-        {activeTab === "profile" && (
-          <div className="p-6 text-center">
-            <h1 className="text-3xl font-bold">Profile Section</h1>
-            <p className="text-gray-600 mt-4">View and edit your profile details.</p>
-          </div>
-        )}
+        {activeTab === "profile" && <About/> }
       </div>
 
       {/* Bottom Navigation Bar */}

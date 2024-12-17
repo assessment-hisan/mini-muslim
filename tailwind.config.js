@@ -11,7 +11,8 @@ export default {
         kids: ['kids', 'sans'],
         inter:['inter'] ,
         mont  : ['Montserrat'],
-        lucky : ['"Luckiest Guy"']
+        lucky : ['"Luckiest Guy"'],
+        bebas : ['"Bebas Neue"']
       },
       colors :{
         primary : "#F38A2D"

@@ -92,6 +92,7 @@ const Modal = ({ message, onClose, onRetry, isCorrect }) => {
     <div className="fixed inset-0 z-30 flex items-center justify-center bg-black/50 ">
       <div className={`rounded-lg p-5 text-center ${modalBackgroundColor}`}>
         <h2 className="text-2xl font-bold mb-4 text-white">{message}</h2>
+        
         <button
           onClick={onRetry}
           className="mr-3 px-4 py-2 rounded-lg bg-yellow-500 text-white"

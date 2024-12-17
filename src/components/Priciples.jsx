@@ -76,7 +76,7 @@ const SecondModal = ({ onClose }) => (
           src="/valuebg.jpg"
           alt="Background"
           className="object-cover w-full h-full opacity-80"
-        />
+        />          
       </div>
       <div className='relative z-10 h-full w-full font-mont flex justify-center items-center'>
         <div className='space-y-5 bg-blue-100/20 p-8 rounded-2xl text-center'>
@@ -114,7 +114,7 @@ const ThirdModal = ({ onClose }) => (
       <div className='relative z-20'>
         <div className='mt-32 space-y-3 bg-blue-100/20 p-5 rounded-lg'>
           <h1 className='text-5xl font-lucky font-semibold text-center text-blue-800'>Belief</h1>
-          <ul className='text-xl font-medium text-blue-800 list-disc px-8'>
+          <ul className='text-xl font-medium text-blue-800 list-none px-8'>
             <li>To believe in the existence of Allah</li>
             <li>To believe in the existence of angels of Allah</li>
             <li>To believe in the existence of the holy books of Allah</li>
@@ -267,7 +267,7 @@ const SeventhModal = ({ onClose }) => {
               <p><strong>Mother:</strong> Amina bint Wahb</p>
               <p><strong>Grandfather:</strong> Abdul Muttalib</p>
               <h2 className="text-3xl font-bold font-lucky text-center text-blue-700 mt-4">Wives (RA)</h2>
-              <ul className="text-lg text-center list-disc px-8 space-y-2">
+              <ul className="text-lg text-center list-none px-10 space-y-2">
                 <li>Khadijah bint Khuwaylid (RA)</li>
                 <li>Sawda bint Zam'a (RA)</li>
                 <li>Aisha bint Abi Bakr (RA)</li>
@@ -323,7 +323,7 @@ const Priciples = () => {
       {/* grid layout */}
       <div className="p-4 px-12 relative z-50">
         {/* Grid Layout */}
-        <div className="space-y-5">
+        <div className="space-y-3">
           {/* row */}
           <div className="grid grid-cols-1">
             {data.slice(0, 1).map((item) => (
