@@ -1,6 +1,8 @@
 
+
 import React, { useState } from 'react';
 import { FaArrowLeftLong } from 'react-icons/fa6';
+import { IoNotificationsCircle } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 
 // Question Data Array
@@ -84,34 +86,22 @@ const AnswerOption = ({ image, altText, onClick }) => (
 
 // Modal Component
 const Modal = ({ message, onClose, onRetry, isCorrect }) => {
-  const handleClickOutside = (e) => {
-    if (e.target.classList.contains("modal-overlay")) {
-      onClose();
-    }
-  };
-
+  const modalBackgroundColor = isCorrect ? 'bg-green-500' : 'bg-red-500';
+  
   return (
-    <div
-      className="fixed inset-0 z-30 flex items-center justify-center bg-black/50 modal-overlay"
-      
-    >
-      <div className="bg-white rounded-lg p-5 text-center">
-        <h2 className="text-2xl font-bold mb-4">{message}</h2>
-        {isCorrect !== null && (
-          <button
-            onClick={onRetry}
-            className="mr-3 px-4 py-2 rounded-lg bg-yellow-500 text-white"
-          >
-            Retry
-          </button>
-        )}
+    <div className="fixed inset-0 z-30 flex items-center justify-center bg-black/50 ">
+      <div className={`rounded-lg p-5 text-center ${modalBackgroundColor}`}>
+        <h2 className="text-2xl font-bold mb-4 text-white">{message}</h2>
+        <button
+          onClick={onRetry}
+          className="mr-3 px-4 py-2 rounded-lg bg-yellow-500 text-white"
+        >
+          Retry
+        </button>
         <button
           onClick={onClose}
-          className={`px-4 py-2 rounded-lg text-white ${
-            isCorrect ? "bg-blue-600" : "bg-gray-600"
-          }`}
-        >
-          {isCorrect ? "Next" : "Skip"}
+          className={`px-4 py-2 rounded-lg text-white ${isCorrect ? 'bg-blue-600' : 'bg-gray-600'}`}>
+          {isCorrect ? 'Next' : 'Skip'}
         </button>
       </div>
     </div>
@@ -228,13 +218,16 @@ const Routine = () => {
         {/* Header */}
         {/* <Header title="Routine" linkPath="/" linkText="Home" /> */}
 
-      <div className='flex items-center justify-between pt-16'>
-        <Link to="/">
-        <div className='bg-black/10 ring-1 ml-5 ring-black rounded-lg px-4 py-1 text-xl font-mont flex justify-center items-center font-semibold'>
-          <span><FaArrowLeftLong className='mr-2 text-xl'/></span> Home
-        </div>
-        </Link>
-      </div>
+       <div className='relative  px-6 pr-10  py-2  flex justify-between items-center w-full mb-4'>
+                        <Link to="/">
+                        <div className='bg-black/10 ring-1 ml-5 ring-black/10 rounded-xl px-2 py-1 text-base font-mont flex justify-center items-center font-semibold'>
+                          <span><FaArrowLeftLong className='mr-2 text-lg'/></span> Back
+                        </div>
+                        </Link>
+                        <div className=''>
+                          <IoNotificationsCircle className='text-[2.7rem] text-black'/>
+                        </div>
+                      </div>
 
         {/* Question Index Display */}
         <div className="text-center my-4 pt-6 ">

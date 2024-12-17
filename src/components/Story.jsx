@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaArrowLeftLong } from "react-icons/fa6";
+import { IoNotificationsCircle } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 const honest = "Mother sent Ali to the shop. He bought some vegetables and sweets. On the way home, he saw some extra sweets in the bag. The shopkeeper hadn’t noticed it. He returned to the shop and gave it back. The shopkeeper refused to take it back and appreciated him for his honesty. Friends, honesty brings us a lot of benefits. People always love honest people. Honesty has a magical power. It can win the hearts of the people. Have you heard about a boy who told the truth to the robbers? He was from Jeelan of Iran. One day, he expressed his interest to travel to Baghdad to seek more knowledge. His mother agreed and gave him forty gold coins stitched in a pouch. Mother advised him not to lie at any cost. His travel was with a caravan. On the way, a group of robbers attacked them and looted the valuables. One of the robbers asked the boy whether he was keeping anything valuable. The boy replied “yes, I have forty gold coins with me”. Surprised by his reply, they frisked him. They got the coins. “What is your name?” - the robber asked. “Abdul Qadir” - the boy replied. “Why didn’t you lie and keep your coins safe?” - the robber asked. “My mother has advised me to say only the truth and not to lie at all” - the boy replied. Exclaimed with his reply, the robber repented and gave back all properties of the caravan. Friends, how honesty has changed the minds of the robbers! How it has ignited the spirit of virtue! This boy in the story is the famous Sheikh Abdul Qadir Jeelani. Telling the truth is a very good habit. If you always speak the truth, you can save yourself from a lot of troubles. To tell the truth, even if it is bitter, is the message of Islam. Our Prophet صلى الله عليه وسلم was famous for his truthfulness in his childhood. That’s why he was called ‘Al-Ameen’ (the truthful one). Let’s pledge that we will always tell the truth."
 const pun = "Umar was studying in third grade. He was always late to the class. Teacher used to advise him to come on time. But he did nothing to change his habit. One day, the teacher decided to make Umar aware of the drawbacks of being late. On his birthday, the teacher gifted him a box. He opened it with much expectation. It was nothing but a stopped clock. A note was printed on it “ Be punctual. Be successful”. Seeing this, Umar understood the point the teacher was making. He became determined to be punctual and regular. He studied very well. He performed well than all the students in his class. His teacher noticed his drastic change. One day, she asked him to come to the front of the class. Patting on his shoulder, the teacher announced, “Look at Umar. He is a role model for all of us” -She motivated everyone to be like him. Friends, punctuality is a habit of doing things at the right time. It is the quality of being on time. It gives you more energy and enthusiasm. Punctuality is the key to success in life. A punctual student always gets respect and acceptance in the school and society. The parents and teachers admire them. Once a man asked our prophet “Which is the best act?” “The prayer in its right time,” - Prophet replied. Islam has always promoted punctuality. It leads to a productive life. It will make you feel happy rather than frustrated and guilty. May Allah help us be punctual. Aameen ."
@@ -63,14 +64,17 @@ const Story = () => {
  console.log(selectedStory)
   return (
     <div className='view  h-full py-5 overflow-auto '>
-      {/* topnav */}
-      <div className='flex items-center justify-between py-2 '>
-        <Link to="/">
-        <div className='bg-black/10 ring-1 ml-5 ring-black rounded-lg px-4 py-1 text-xl font-mont flex justify-center items-center font-semibold'>
-          <span><FaArrowLeftLong className='mr-2 text-xl'/></span> Home
-        </div>
-        </Link>
-      </div>
+      {/* top nav */}
+      <div className='relative top-5 px-6 pr-10  py-2  flex justify-between items-center w-full'>
+              <Link to="/">
+              <div className='bg-black/10 ring-1 ml-5 ring-black/10 rounded-xl px-2 py-1 text-base font-mont flex justify-center items-center font-semibold'>
+                <span><FaArrowLeftLong className='mr-2 text-lg'/></span> Back
+              </div>
+              </Link>
+              <div className=''>
+                <IoNotificationsCircle className='text-[2.7rem] text-black'/>
+              </div>
+            </div>
       {/* Background Image */}
       <div className="fixed inset-0 -z-10">
         <img
@@ -80,7 +84,7 @@ const Story = () => {
         />
       </div>
       {/* <h1 className="text-center py-2 text-3xl font-semibold mb-10">Story Mode</h1> */}
-      <img src="/mrl.png" alt="" className='w-56 mx-auto mb-6'/>
+      <img src="/mrl.png" alt="" className='w-56 mx-auto mb-6  mt-4'/>
       <div className="grid grid-cols-1 gap-6 px-10 overflow-y-auto">
         {stories.map((story) => (
           <div 

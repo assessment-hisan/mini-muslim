@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-
+import { Link } from 'react-router-dom';
+import { FaArrowLeftLong } from 'react-icons/fa6';
+import { IoNotificationsCircle } from "react-icons/io5";
 const Values = () => {
+
   const text = [
     {
       text: "messengers",
@@ -84,7 +87,7 @@ const Values = () => {
       ]
     },
     {
-      text: "days & months",
+      text: " months",
       clr: "#0bf77a",
       data: [
         "Muharram",
@@ -114,7 +117,7 @@ const Values = () => {
   };
 
   return (
-    <div className="relative h-screen flex items-center justify-center">
+    <div className="relative h-screen flex flex-col items-center justify-center">
       {/* Background */}
       <div className="fixed inset-0 z-0">
         <img
@@ -123,7 +126,17 @@ const Values = () => {
           className="object-cover w-full h-full opacity-80"
         />
       </div>
-
+    {/* topnav */}
+    <div className='fixed top-10 px-6 pr-10  py-2  flex justify-between items-center w-full'>
+        <Link to="/">
+        <div className='bg-black/10 ring-1 ml-5 ring-black/10 rounded-xl px-2 py-1 text-base font-mont flex justify-center items-center font-semibold'>
+          <span><FaArrowLeftLong className='mr-2 text-lg'/></span> Back
+        </div>
+        </Link>
+        <div className=''>
+          <IoNotificationsCircle className='text-[2.7rem] text-black'/>
+        </div>
+      </div>
       {/* Main Content */}
       <div className="relative z-10 flex flex-col justify-center items-center gap-y-5">
         {text.map(({ text, clr, data }) => (
@@ -141,23 +154,31 @@ const Values = () => {
       {/* Modal */}
       {selectedCategory && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
-          <div className="relative bg-white rounded-lg w-[90%] max-w-md max-h-[90vh] my-8 overflow-y-auto p-5">
+          <div className="fixed z-10 bottom-0 left-0 w-full flex justify-center">
+        <img
+          src="valuebg.jpg"
+          alt="Foreground"
+          className="object-cover"
+        />
+      </div>
+          <div className="z-20 relative  rounded-lg w-[90%] bg-black/20 max-w-md max-h-[70vh] my-8 overflow-y-auto p-5">
+            
             <button
-              className="absolute top-3 right-3 text-black text-2xl font-bold"
+              className="absolute top-3 right-3 text-black text-3xl font-bold"
               onClick={closeModal}
             >
               &times;
             </button>
             <h2
-              className="text-3xl font-mont tracking-wide font-bold mb-4 text-center uppercase"
+              className="text-5xl font-lucky tracking-wide font-semibold mb-4 text-center uppercase "
               style={{ color: selectedCategory.clr }}
             >
               {selectedCategory.text}
             </h2>
             {selectedCategory.data && selectedCategory.data.length > 0 ? (
-              <ul className="list-disc pl-5 text-gray-900 text-lg">
+              <ul className="list-none pl-5 text-white text-lg">
                 {selectedCategory.data.map((item, index) => (
-                  <li key={index} className='font-mont text-xl font-semibold'>{item}</li>
+                  <li key={index} className={`font-mont text-xl py-1 font-semibold text-center ${index %2 ? ``: `bg-white/20`}`}>{item}</li>
                 ))}
               </ul>
             ) : (

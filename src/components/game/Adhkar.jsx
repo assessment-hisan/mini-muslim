@@ -2,7 +2,7 @@ import React from 'react';
 import  { useState } from 'react';
 import { FaArrowLeftLong } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
-
+import { IoNotificationsCircle } from "react-icons/io5";
 // Question Data Array
 const questions = [
   {
@@ -143,7 +143,8 @@ const questions = [
 //     <Link to={linkPath}>
 //       <p className='pl-5 text-blue-800 text-lg top-4'>{linkText}</p>
 //     </Link>
-//     <h1 className='text-5xl text-indigo-950 font-bold pb-5 text-center'>{title}</h1>
+//     <h1 className='text-5xl text-indigo-950 font-bold pb-5 text-c
+// enter'>{title}</h1>
 //   </div>
 // );
 
@@ -278,14 +279,17 @@ const Adhkar = () => {
         {/* <Header title='Adhkhar' linkPath='/' linkText='Home' /> */}
 
         {/* Question Index Display */}
-        <div className="text-center my-4 ">
-          <div className='flex items-center justify-between pb-16 '>
-        <Link to="/">
-        <div className='bg-black/10 ring-1 ml-5 ring-black rounded-lg px-4 py-1 text-xl font-mont flex justify-center items-center font-semibold'>
-          <span><FaArrowLeftLong className='mr-2 text-xl'/></span> Home
-        </div>
-        </Link>
-      </div>
+        <div className="text-center my-2  ">
+          <div className='relative  px-6 pr-10  py-2  flex justify-between items-center w-full mb-4'>
+                        <Link to="/">
+                        <div className='bg-black/10 ring-1 ml-5 ring-black/10 rounded-xl px-2 py-1 text-base font-mont flex justify-center items-center font-semibold'>
+                          <span><FaArrowLeftLong className='mr-2 text-lg'/></span> Back
+                        </div>
+                        </Link>
+                        <div className=''>
+                          <IoNotificationsCircle className='text-[2.7rem] text-black'/>
+                        </div>
+                      </div>
         <h2 className="inline text-2xl bg-indigo-500 shadow-inner px-5 py-2 font-mont rounded-lg text-white ">
             Question {currentQuestionIndex + 1} 
           </h2>

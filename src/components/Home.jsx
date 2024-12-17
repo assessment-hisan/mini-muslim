@@ -54,8 +54,9 @@ const Home = ({ setActiveTab }) => {
                 <div className="relative w-[95%] mx-auto bg-[#092ca1] h-[200px] flex rounded-[2rem] shadow-lg ">
                     <div className="w-1/2 h-full flex flex-col  text-3xl font-semibold pl-3 text-white ">
                     <p className='text-6xl font-bold font-kids mb-7 leading-[4rem]' >,,</p>
-                    <p className=" font-light text-2xl leading-5 font-mont">Childrens</p>
+                    <p className=" font-light text-2xl leading-5 font-mont">Children's</p>
                         <p className="font-mont font-bold text-3xl">Enlightenment</p>
+                        <div className='h-2 w-full bg-sky-500 rounded-xl mt-1'></div>
                     </div>
                     <div className="w-1/2 h-full flex items-center justify-center">
                         <img src="/kid.png" alt="Character" className='h-full object-cover mt-3 mr-2 ' style={{
