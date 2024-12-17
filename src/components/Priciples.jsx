@@ -114,7 +114,7 @@ const ThirdModal = ({ onClose }) => (
       <div className='relative z-20'>
         <div className='mt-32 space-y-3 bg-blue-100/20 p-5 rounded-lg'>
           <h1 className='text-5xl font-lucky font-semibold text-center text-blue-800'>Belief</h1>
-          <ul className='text-xl font-medium text-blue-800 list-none px-8'>
+          <ul className='text-xl text-center font-medium text-blue-800 list-none px-8'>
             <li>To believe in the existence of Allah</li>
             <li>To believe in the existence of angels of Allah</li>
             <li>To believe in the existence of the holy books of Allah</li>
@@ -151,7 +151,7 @@ const FourthModal = ({ onClose }) => {
         <div className="relative z-20">
           <div className="mt-32 space-y-5 bg-blue-100/50 p-5 rounded-lg">
             <h1 className="text-5xl font-lucky font-semibold text-center text-blue-800">Holy Books</h1>
-            <ul className="text-xl font-medium text-blue-800 list-disc px-8">
+            <ul className="text-xl font-medium text-blue-800 list-none px-8">
               <li>Tourat - Musa</li>
               <li>Zabur - Davud</li>
               <li>Injeel -Esa</li>
@@ -220,7 +220,7 @@ const SixthModal = ({ onClose }) => {
         <div className="relative z-20">
           <div className="mt-32 space-y-5 bg-blue-100/50 p-6 rounded-lg">
             <h1 className="text-4xl font-bold  font-lucky text-center  text-blue-800">Prayer Times</h1>
-            <ul className="text-lg text-center font-medium text-blue-800 list-disc px-8">
+            <ul className="text-lg text-center font-medium text-blue-800 list-none px-8">
               <li>Fajr: Performed at dawn, when the morning light appears across the sky</li>
               <li>Dhuhr: Performed just after the sun reaches its zenith, in the early afternoon</li>
               <li>Asr: Performed between noon and sunset, in the late afternoon</li>

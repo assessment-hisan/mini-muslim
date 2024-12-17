@@ -42,10 +42,10 @@ const Home = ({ setActiveTab }) => {
             <div className="relative z-30 py-5 pt-12 w-[95%] mx-auto px-2 flex justify-between items-center">
                 <div>
                 <h1 className='font-lucky text-[2rem]  text-black uppercase leading-8 tracking-wide'>Mini Muslim</h1>
-                <p className=" font-mont text-base text-gray-800 leading-3  font-semibold ">Welcome to Mini Muslim</p>
+                <p className=" font-mont text-base text-gray-800 leading-3  font-medium ">Welcome to Mini Muslim</p>
                 </div>
-                <div className='h-12 max-w-44 bg-black/80 px-2 rounded-lg'> 
-                    <img src="/logowhite.png" alt=""  className='w-12'/>
+                <div className='h-12 max-w-44 bg-blue-600/60 px-2 rounded-lg'> 
+                    <img src="/logowhite.png" alt=""  className='w-10 mt-1'/>
                 </div>
             </div>
 
@@ -53,7 +53,7 @@ const Home = ({ setActiveTab }) => {
             <div className='absolute w-full z-30 overflow-auto'>
                 <div className="relative w-[95%] mx-auto bg-[#092ca1] h-[200px] flex rounded-[2rem] shadow-lg ">
                     <div className="w-1/2 h-full flex flex-col  text-3xl font-semibold pl-3 text-white ">
-                    <p className='text-6xl  font-bebas mb-7 leading-[3rem]' >,,</p>
+                    <p className='text-6xl  font-bebas mb-7 leading-[2rem] pt-6' >,,</p>
                     <p className=" font-light text-2xl leading-5 font-mont">Children's</p>
                         <p className="font-mont font-bold text-3xl">Enlightenment</p>
                         <div className='h-2 w-full bg-sky-500 rounded-xl mt-1'></div>

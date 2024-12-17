@@ -76,7 +76,7 @@ const Modal = ({ onClose }) => {
           <img
             src="/logowhite.png" // Path to your white logo
             alt="Logo"
-            className="z-10 w-80" // Adjust size as needed
+            className="z-10 w-72" // Adjust size as needed
           />
           {/* Background effect (optional) */}
           <div className="absolute inset-0 bg-blue-900 opacity-80"></div>

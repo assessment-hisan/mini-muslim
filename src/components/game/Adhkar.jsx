@@ -100,9 +100,9 @@ const questions = [
     foreground: "/morning.png",
     question: "What do you say when you go out of Masjid?",
     answer: [
-      { src: "/adhkar/entym.png", isCorrect: false },
-      { src: "/adhkar/GGG.png", isCorrect: true },
-      { src: "/adhkar/EXIT.png", isCorrect: true },
+      { src: "/adhkar/entym.png", isCorrect: true },
+      { src: "/adhkar/GGG.png", isCorrect: false },
+      { src: "/adhkar/EXIT.png", isCorrect: false },
     ],
   },
   {
