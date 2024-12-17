@@ -29,15 +29,15 @@ const Modal = ({ onClose }) => {
             className="object-cover w-full h-full"
           />
         </div>
-        {/* You can uncomment this section if you want a header and a "Continue" button */}
-        {/* <h2 className="text-xl font-bold">Welcome!</h2>
-        <p className="mt-2">Thank you for using our app. Click "Continue" to get started.</p>
+        
+        
+        
         <button
           onClick={onClose}
-          className="mt-4 px-4 py-2 bg-orange-500 text-white rounded animate-bounce"
+          className="absolute bottom-10 left-20 mt-4  font-lucky   py-2 text-blue-100 text-5xl  animate-bounce"
         >
-          Continue
-        </button> */}
+          start Now
+        </button> 
       </div>
       <div className="w-full h-32 bg-blue-700 flex justify-center items-center z-50">
         <button
