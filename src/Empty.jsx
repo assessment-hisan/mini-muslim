@@ -26,7 +26,7 @@ const Modal = ({ onClose }) => {
           <img
             src="/main.jpg"
             alt="Background"
-            className="object-cover w-full h-full opacity-80 "
+            className="object-cover w-full h-full"
           />
         </div>
         {/* You can uncomment this section if you want a header and a "Continue" button */}
