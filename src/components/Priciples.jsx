@@ -80,7 +80,7 @@ const SecondModal = ({ onClose }) => (
       </div>
       <div className='relative z-10 h-full w-full font-mont flex justify-center items-center'>
         <div className='space-y-5 bg-blue-100/20 p-8 rounded-2xl text-center'>
-          <h1 className='text-5xl font-semibold text-blue-800'>Islam</h1>
+          <h1 className='text-5xl  font-lucky font-semibold text-blue-800'>Islam</h1>
           <div className="text-2xl font-medium text-blue-800">
             <p>Shahada (Faith)</p>
             <p>Salat (Prayer)</p>
@@ -149,7 +149,7 @@ const FourthModal = ({ onClose }) => {
         </div>
 
         <div className="relative z-20">
-          <div className="mt-32 space-y-5 bg-blue-100 p-5 rounded-lg">
+          <div className="mt-32 space-y-5 bg-blue-100/50 p-5 rounded-lg">
             <h1 className="text-5xl font-lucky font-semibold text-center text-blue-800">Holy Books</h1>
             <ul className="text-xl font-medium text-blue-800 list-disc px-8">
               <li>Tourat - Musa</li>
@@ -185,7 +185,7 @@ const FifthModal = ({ onClose }) => {
         </div>
 
         <div className="relative z-20">
-          <div className="mt-32 space-y-5 bg-blue-100 p-6 rounded-lg">
+          <div className="mt-32 space-y-5 bg-blue-100/50 p-6 rounded-lg">
             <h1 className="text-5xl font-lucky font-semibold text-center text-blue-800">Qibla</h1>
             <p className="text-xl text-center text-blue-800">
               The Qibla (Arabic: قِبْلَة, lit. ‘direction’) is the direction towards the Kaaba in the Sacred Mosque in Mecca, which is used by Muslims in various religious contexts, particularly the direction of prayer for the salah.
@@ -218,8 +218,8 @@ const SixthModal = ({ onClose }) => {
         </div>
 
         <div className="relative z-20">
-          <div className="mt-32 space-y-5 bg-blue-100 p-6 rounded-lg">
-            <h1 className="text-4xl font-bold text-center text-blue-800">Prayer Times</h1>
+          <div className="mt-32 space-y-5 bg-blue-100/50 p-6 rounded-lg">
+            <h1 className="text-4xl font-bold  font-lucky text-center  text-blue-800">Prayer Times</h1>
             <ul className="text-lg text-center font-medium text-blue-800 list-disc px-8">
               <li>Fajr: Performed at dawn, when the morning light appears across the sky</li>
               <li>Dhuhr: Performed just after the sun reaches its zenith, in the early afternoon</li>
@@ -257,7 +257,7 @@ const SeventhModal = ({ onClose }) => {
 
         <div className="relative z-20 ">
           <div className="mt-28 h-[80vh] overflow-y-auto space-y-5 bg-blue-100/70 p-6 rounded-lg ">
-            <h1 className="text-4xl font-bold text-center text-blue-700">Prophet Muhammad (PBUH)</h1>
+            <h1 className="text-4xl font-bold text-center font-lucky text-blue-700">Prophet Muhammad (PBUH)</h1>
             <div className="text-lg text-center font-medium text-blue-900">
               <p><strong>Full Name:</strong> Muhammad ibn Abdullah</p>
               <p><strong>Date of Birth:</strong> 12th of Rabi' al-Awwal, (approximately 570 CE)</p>
@@ -266,7 +266,7 @@ const SeventhModal = ({ onClose }) => {
               <p><strong>Father:</strong> Abdullah ibn Abdul Muttalib</p>
               <p><strong>Mother:</strong> Amina bint Wahb</p>
               <p><strong>Grandfather:</strong> Abdul Muttalib</p>
-              <h2 className="text-3xl font-bold text-center text-blue-700 mt-4">Wives (RA)</h2>
+              <h2 className="text-3xl font-bold font-lucky text-center text-blue-700 mt-4">Wives (RA)</h2>
               <ul className="text-lg text-center list-disc px-8 space-y-2">
                 <li>Khadijah bint Khuwaylid (RA)</li>
                 <li>Sawda bint Zam'a (RA)</li>
@@ -280,7 +280,7 @@ const SeventhModal = ({ onClose }) => {
                 <li>Safiyya bint Huyayy (RA)</li>
                 <li>Maymunah bint al-Harith (RA)</li>
               </ul>
-              <h2 className="text-3xl font-bold text-center text-blue-700 mt-4">Children</h2>
+              <h2 className="text-3xl font-bold text-center font-lucky text-blue-700 mt-4">Children</h2>
               <ul className="text-lg text-center list-disc px-8 space-y-2">
                 <li><strong>Qasim ibn Muhammad</strong></li>
                 <li><strong>Abdullah ibn Muhammad</strong> (also known as Tayyib and Tayyir)</li>
